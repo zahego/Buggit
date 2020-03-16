@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Proof of concept</title>
+        <link href="../style/myStyle.css" rel="stylesheet" type="text/css" />
+        <link href="../style/comingSoon.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="comingSoonBgImg">
+    
+    <div id="middle" class="middleBold">
+     <p>Coming Soon Page</p>
+    </div>
+    <div id="middle" class="middleThin">
+    <p>this webpage is under construction. Stay tunes</p>
+    <p>timer for this page to go online</p>
+    <div id="timer"></div>
+    </div>
+    
+    <div class="bottomLeft">
+    <div id="returnHomePage" onClick="parent.location.replace('../index.html')">
+    return to homepage
+    </div>
+    </div>
+    </div>
+        <script>
+            var countDownDate = new Date("Jan 2, 2021").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "EXPIRED";
+  }
+}, 1000);
+if(document.getElementById("returnHomePage").onclick){
+function addCounter() {
+        document.body.innerHTML="hello";}}
+        </script>
+
+    </body>
+</html>

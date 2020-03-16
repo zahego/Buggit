@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>BuggIT</title>
+        <link href="style/myStyle.css" rel="stylesheet" type="text/css" />
+        <link href="style/clickSort.css" rel="stylesheet" type="text/css" />
+        <link href="style/slideShow.css" rel="stylesheet" type="text/css" />
+        <link href="style/comingSoon.css" rel="stylesheet" type="text/css" />
+        <link href="style/draggableDiv.css" rel="stylesheet" type="text/css" />
+        
+        
+        
+    </head>
+    <body>
+        
+        <div id="titleNav">
+
+            <div id="pageTitle">
+                <span>
+                    Bugg<b>IT</b>
+                </span>
+                Bugg<b style="color: #003368">IT</b>
+            </div>
+
+            <div id="nav">
+                <div class="menu" onclick="toggleSubMenu(this)">
+                    Search JSON
+                    <div class="submenu">
+                        <a href="#/users">Search User</a>
+                        <br>
+                        <a href="#/others">Search Profile</a>
+                        <br>
+                        <a href="#/slideShow">Slide Show</a>
+                    </div>
+                </div>
+                <!--<div class="slash">|</div>-->
+                <div class="dash">|</div>
+
+                <div class="menu" onclick="toggleSubMenu(this)">
+                    User Info JSP
+                    <div class="submenu">
+                        <a href="#/usersView">Web User</a>
+                        <br>
+                        <a href="#/othersView">Profile</a>
+                    </div>
+                </div>
+                <div class="dash">|</div>
+
+                <div class="menu" onclick="toggleSubMenu(this)">
+                    Page
+                    <div class="submenu">
+                        <a href="https://www.reddit.com/">Reddit</a>
+                        <br>
+                        <a href="https://stackoverflow.com/">Stack</a>
+                        <br>
+                        <a href="#/comingSoonPage">Coming Soon vJS</a>
+                        <br>
+                        <a onClick="parent.location.replace('tutorial/poc.html')">Coming Soon vHTML</a>
+                    </div>
+                </div>
+                <div class="dash">|</div>
+
+                <div class="menu" onclick="toggleSubMenu(this)">
+                    Framework
+                    <div class="submenu">
+                        <a onclick="html/Framework/VueTest.html">Vue</a>
+                        <br>
+                        <a href="#/others">React</a>
+                        <br>
+                        <a href="#/slideShow">Angular</a>
+                    </div>
+                </div>
+                <div class="dash">|</div>
+
+                <div class="menu" onclick="toggleSubMenu(this)">
+                    Account
+                    <div class="submenu">
+                        <br>
+                        <a href="#/logOn">Log on</a>
+                        <br>
+                        <a href="#/logOff">Log off</a>
+                        <br>
+                        <a href="#/getProfile">Get profile</a>
+                    </div>
+                </div>
+                <div class="dash">|</div>
+                <div class="menu"><a href="#/home">Home</a></div>
+                <div class="dash">|</div>
+                <div class="menu"><a href="#/blog">Blog</a></div>
+            </div>   
+            
+            <!-- Must stop the floating so that elements below (e.g., content) 
+            don't float up into here. -->
+            <div class="stopFloat"></div>
+            
+            
+        </div>
+        
+        <div id="content">
+            
+       
+        
+        </div>
+        
+        <div id="footer" onmouseover="toggleName()">
+        Minh Tran Hoang
+        </div>
+        <script src="js/ajaxUtilities.js"></script>
+        <script src="js/home.js"></script>
+        <script src="js/routeFw.js"></script>
+        <script src="js/blog.js"></script>
+        <script src="js/dropDownMenu.js"></script>
+        <script src="js/WebUser.js"></script>
+        <script src="js/ajax.js"></script>
+        <script src="js/ajax3.js"></script>
+        <script src="js/users.js"></script>
+        <script src="js/others.js"></script>
+        <script src="js/comingSoonPage.js"></script>
+        <script src="js/MakeFilterSortableTable.js"></script>
+        <script src="js/MakeSlideShow.js"></script>
+        <script src="js/slideShow.js"></script>
+        <script src="js/jsTest/VueInjection.js"></script>
+        <script src="js/viewUser.js"></script>
+        <script src="js/viewOther.js"></script>
+        <script src="js/logOn.js"></script>
+        <script src="js/logOff.js"></script>
+        <script src="js/getProfile.js"></script>
+        
+        <!--<script src="js/framework/vue.js"></script>-->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+        
+                        
+                        
+                        
+        function setContent(httpRequest) {
+                console.log("Ajax call was successful.");
+                document.getElementById("content").innerHTML = httpRequest.responseText;
+            }
+        function setError(httpRequest) {
+                console.log("Ajax call was NOT successful.");
+                console.log(httpRequest);
+                document.getElementById("content").innerHTML = httpRequest.errorMsg;
+            }
+        function toggleSubMenu(ele) {
+            console.log("current element is " + ele.innerHTML);
+
+            var subs = ele.getElementsByClassName("submenu");
+
+            if (subs.length > 0) {
+                var submenu = subs[0]; // get first submenu
+                console.log("submenu is " + submenu.innerHTML);
+
+                if (submenu.style.display === "block") {
+                    submenu.style.display = "none";
+                } else {
+                    submenu.style.display = "block";
+                }
+            } else {
+                console.log("this element does not have any children with class 'submenu'. ");
+            }
+        }
+        function toggleName(){
+            var nameChange=document.getElementById("footer");
+            if(nameChange.innerHTML==="Minh Tran Hoang"){
+            nameChange.innerHTML="Kent M Kosuke and Takashi Pham";
+            }
+            else{
+             nameChange.innerHTML="Minh Tran Hoang";   
+            }
+        }
+        
+        "use strict";
+                        var myRoutes = [];
+                        var myRoutesBody =[];
+                        
+                        myRoutes['#/'] = home;
+                        myRoutes['/home'] = home;
+                        myRoutes['/blog'] = blog;
+                        myRoutes['/webUser'] = webUser;
+                        myRoutes['/users'] = users.display;
+                        myRoutes['/others'] = others.display;
+                        myRoutes['/slideShow'] = slideShow;
+                        myRoutes['/usersView'] = usersView.display;
+                        myRoutes['/othersView'] = othersView.display;
+                        myRoutes['/logOn'] = logOn.UI;
+                        myRoutes['/logOff'] = logOff.UI;
+                        myRoutes['/getProfile'] = getProfile.UI;
+                        //myRoutes['/vueStuff']= vueStuff;
+                        //myRoutes['/comingSoonPage'] = comingSoonPage;
+                        
+                        myRoutesBody['#/'] = comingSoonPage;
+                        myRoutesBody['/comingSoonPage'] = comingSoonPage; 
+
+
+                        // routeFw returns a routing object that has private and public 
+                        // data members and methods. 
+                        // As input parameter, it takes an object with properties you can set 
+                        // or just accept whatever defaults are set by the framework.
+                        var myRoutes = routeFw({
+                            routeArray: myRoutes,
+                            startingPath: '/home',
+                            contentId: "content"
+                        });
+                        
+                        var myRoutesBody = routeFwBody({
+                            routeArray: myRoutesBody,
+                            //startingPath: '/home',
+                            contentId: "body"
+                        });
+
+                        // print the routes (check console.log)
+                        myRoutes.printRoutes();
+
+        </script>
+    </body>
+</html>

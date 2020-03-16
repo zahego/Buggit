@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="reactTest"></div>
+        <h2>Add React in One Minute</h2>
+    <p>This page demonstrates using React with no build tooling.</p>
+    <p>React is loaded as a script tag.</p>
+
+    <p>
+      This is the first comment.
+      <!-- We will put our React component inside this div. -->
+      <div class="like_button_container" data-commentid="1"></div>
+    </p>
+
+    <p>
+      This is the second comment.
+      <!-- We will put our React component inside this div. -->
+      <div class="like_button_container" data-commentid="2"></div>
+    </p>
+
+    <p>
+      This is the third comment.
+      <!-- We will put our React component inside this div. -->
+      <div class="like_button_container" data-commentid="3"></div>
+    </p>
+        
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script>
+            'use strict';
+
+        const e = React.createElement;
+
+        class LikeButton extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = { liked: false };
+        }
+
+        render() {
+    if (this.state.liked) {
+      return 'You liked comment number ' + this.props.commentID;
+    }
+
+    return e(
+      'button',
+      { onClick: () => this.setState({ liked: true }) },
+      'Like'
+    );
+  }
+}
+
+// Find all DOM containers, and render Like buttons into them.
+document.querySelectorAll('.like_button_container')
+  .forEach(domContainer => {
+    // Read the comment ID from a data-* attribute.
+    const commentID = parseInt(domContainer.dataset.commentid, 10);
+    ReactDOM.render(
+      e(LikeButton, { commentID: commentID }),
+      domContainer
+    );
+  });
+    
+        const domContainer = document.querySelector('#like_button_container');
+        ReactDOM.render(e(LikeButton), domContainer);
+           /* import React from 'react';
+            import ReactDOM from 'react-dom';
+            const title=React.creatElement(
+                    'h1',
+            {id: 'title', className: 'header'},
+                    'Hello World')
+            ReactDOM.render(
+                    title,
+                    document.getElementById('reactTest')
+            )*/
+        </script>
+    </body>
+</html>

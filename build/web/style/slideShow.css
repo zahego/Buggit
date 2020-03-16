@@ -1,0 +1,32 @@
+.slideShow{
+    text-align:center;
+    font-weight:bold; 
+    border-radius: 10px;
+    
+}
+
+.slideShow img { /* style images that are inside of class slideShow */
+    height: 250px;
+    width: 270px;
+    border-radius:8px;
+    box-shadow: 2px 2px 2px #383D41;
+    /*cut corner*/
+    -webkit-clip-path: polygon(0% 0%, 0% 0%, 80% 0%, 100% 20%, 100% 100%, 0% 100%, 0% 100%, 0% 100%);
+}
+.slideShow .caption {
+    padding-bottom: 1ex;    
+}
+
+.slideShow button {
+    background-color: #1B80B6;
+    color: #383D41;
+    width: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    box-shadow: 2px 2px 2px #383D41;
+    -webkit-clip-path: polygon(0% 0%, 0% 0%, 80% 0%, 100% 20%, 100% 100%, 0% 100%, 0% 100%, 0% 100%);
+}
+
+.slideShow button:hover {
+    background-color: #CCCCCC;
+}

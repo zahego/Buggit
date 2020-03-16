@@ -1,0 +1,52 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+.comingSoonBgImg{
+    background-image: url('../img/colorPalette.png');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;/*cant do absolute*/
+    color: white;
+    font-family: "Roboto Light", "Roboto", san-serif;
+    font-size: 25px;
+    -webkit-clip-path: polygon(0% 0%, 0% 0%, 83% 0%, 100% 20%, 100% 100%, 0% 100%, 0% 100%, 0% 100%);
+    /*opacity: 0.3;*/
+}
+#middle{
+  position: absolute;
+  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  text-align: center;
+  z-index: 2;
+}
+.middleBold{
+    top: 30%;
+    font-size: 50px;
+    font-family: "San Francisco Display Black", "San Francisco", san-serif;
+    
+}
+.middleThin{
+    top: 45%;
+    font-size: 25px;
+    font-family: "San Francisco Display Regular", "San Francisco", san-serif;
+}
+
+
+.bottomLeft {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  text-align: center;
+  font-stretch: condensed;
+  font-weight: bold;
+  color: #383D41;
+}
+
+#timer {
+    font-weight: bold;
+    font-size: 30px;
+}

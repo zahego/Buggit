@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>VueTest for BuggIT</title>
+        <link rel="icon" href="data:;base64,=">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+        <style>
+            [v-cloak]{
+                display: none;
+            }
+            .highlight{
+                border: solid red;
+                color: red;
+            }
+            .shooting-star-enter-active, .shooting-star-leave-active{
+                transition:all .5s ease;
+            }
+            .shooting-star-leave-to, .shooting-star-enter{
+                transform: translateX(150px) rotate(30deg);
+                opacity:0;
+            }
+            .rise-up-leave-to, .rise-up-enter{
+                transform: translateY(30px);
+                opacity:0;
+            }
+            .rise-up-enter-active, .rise-up-leave-active{
+                transition: all 1s linear;
+            }
+            .spin-enter-active{
+                /*problem with this is it will play upon enter the page since all of the div got rendered*/
+                /*bump up the time or make the div not rendered directly and go in consequence to prevent this*/
+                animation: spin-steps 6s;
+            }
+            @keyframes spin-steps{
+                0%{
+                    transform: scale(1) rotate(0);
+                }
+                50%{
+                    transform: scale(5) rotate(360deg);
+                }
+                100%{
+                    transform: scale(1) rotate(1080deg);
+                }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="firstTest">
+            <div class="container">
+                <form v-show="submitted === 1" class="mt-5">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <!--v-bind:value="key" was drop and replaced with :value="key" only -->
+                        <!--using v-model help update the assigned key, replace v-bind with v-model -->
+                        <input type="email" v-model="email" class="form-control form-control-lg">
+                        <label for="text">Name</label>
+                        <input type="text" v-model="text" class="form-control form-control-lg">
+                    </div>
+                    <!--v-on: was drop and replaced with @ only -->
+                    <button type="submit" @click="process" class="btn btn-primary">Submit</button>
+                    <h2  class="mt-5" id="spec">{{testPhrase2()}}</h2>
+                </form>
+
+
+
+                <!--v-cloak to hide element before the page mounting so when the page mount, the element is not visible-->
+                <div v-show="submitted===2" v-cloak>
+                    <h2  class="mt-5" id="spec">{{testPhrase2()}}</h2>
+                    <img :src="imgSrc" :title="imgTitle"></img>
+                    <button type="submit" @click="unprocess" class="btn btn-primary">Click here to navigate back</button>
+                    <button type="submit" @click="process2" class="btn btn-primary">Click here to navigate forward</button>
+                </div>
+
+
+
+
+                <div v-show="submitted===3" v-cloak>
+                    <div class="card mt-5">
+                        <table class="table table-striped">
+                            <h2>Near Earth
+                                <transition name="spin" appear>
+                                    <Span style="display:inline-block">Object</Span>
+                                </transition>
+                                </h2>
+                            <transition name="shooting-star">
+                            <div class="mt-3" v-cloak v-show="showDataSummary">
+                                <span v-cloak v-if="numAsteroid>1">showing {{numAsteroid}} items</span>
+                                <span v-cloak v-else-if="numAsteroid===1">showing {{numAsteroid}} item</span>
+                                <span v-cloak><p>{{closestObject}} has the shortest miss distance from Earth</p></span>
+                            </div> 
+                            
+                            </transition>
+                            <div class="mt-3">
+                                <a href="#" @click="showDataSummary=!showDataSummary">Show/Hide Data Summary</a></div>
+                            <thead class="thead-dark">
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Close Approach Date</th>
+                                <th>Miss Approach Date</th>
+                                <th>Remove</th>
+                            </thread>
+                            <tbody is="transition-group" name="rise-up" v-cloak>
+                                <!--issue here, if no key assign, transition group doesnt have child element key, if assign,only the last element will inherit the transition-->
+                                <tr v-for="(a, index) in asteroid" :key="newtr(index)" :class="{highlight: isMisingData(a)}">
+                                    <td>{{index+1}}</td>
+                                    <td>{{a.name}}</td>
+                                    <td>{{getCloseApproachDate(a)}}</td>
+                                    <td>
+                                        <ul v-if="a.close_approach_data.length>0">
+                                            <li v-for="(value, key) in a.close_approach_data[0].miss_distance">
+                                                {{value}}:{{key}}
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <button @click="remove(index)" class="btn btn-warning">
+                                            remove
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div> 
+                    <button type="submit" @click="unprocess" class="btn btn-primary">Click here to navigate back</button>
+
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+     
+        
+        <!--the order of id, script source and the call of id element in new Vue object matters. 
+        If the order is messed up, undefined error will occur -->
+        <script>
+            
+            var vm=new Vue({
+                 el: '#firstTest', //for root element selector
+                 data: {
+                     email: "yolo@gmail.com",
+                     text: "johnson",
+                     submitted: 1,
+                     testPhrase: "say what? how can Vue be used in a pure vanilla JS environment!!",
+                     imgSrc:"",
+                     imgTitle:"",
+                     asteroid:[],
+                     showDataSummary:true
+                 },
+                 computed:{
+                     numAsteroid:function(){
+                         return this.asteroid.length;
+                     },
+                     closestObject: function(){
+                         //filter, map and sort fucntion
+                         var filter=this.asteroid.filter(function(a){
+                             return a.close_approach_data.length>0;
+                         });
+                         var map=filter.map(function(a){
+                             return {name:a.name, miles:a.close_approach_data[0].miss_distance.miles}
+                         });
+                         var sort=map.sort(function(a, b){
+                             return a.miles-b.miles;
+                         })
+                         if(sort.length>0){
+                         return sort[0].name;
+                     }
+                     else{return null;}
+                     }
+                 },
+                 created:function(){
+                     this.fetchAPOD();
+                     this.fetchAsteroid();
+                 },
+                 methods:{
+                     testPhrase2(){
+                         return "this is fun";
+                     },
+                     process:function(event){
+                         event.preventDefault();
+                         this.submitted=2;
+                         alert("looks like you made it user "+this.email);
+                     },
+                     process2:function(event){
+                         event.preventDefault();
+                         this.submitted=3;
+                     },
+                     unprocess:function(event){
+                         event.preventDefault();
+                         this.submitted=1;
+                     },
+                     fetchAPOD:function(){
+                    var apiKey="IGBvvSGLWhba8cxyG5Xa3oWUxjx5xaYNXoYRPiWG";
+                    var URL="https://api.nasa.gov/planetary/apod?api_key="+apiKey;
+                             axios.get(URL).then(function (response) {
+                    // handle success
+                    vm.imgSrc=response.data.url;
+                    vm.imgTitle=response.data.title;
+                    });
+                    },
+                    fetchAsteroid:function(){
+                    var apiKey="IGBvvSGLWhba8cxyG5Xa3oWUxjx5xaYNXoYRPiWG";
+                    var URL="https://api.nasa.gov/neo/rest/v1/neo/browse?api_key="+apiKey;
+                             axios.get(URL).then(function (response2) {
+                    // handle success
+                    vm.asteroid=response2.data.near_earth_objects.slice(0,10);
+                    });
+                    },
+                    getCloseApproachDate:function(a){
+                        if(a.close_approach_data.length>0){
+                            return a.close_approach_data[0].close_approach_date;
+                        }
+                        else{
+                            return "N/A";
+                        }
+                    },
+                    remove:function(index){
+                        this.asteroid.splice(index, 1)
+                    },
+                    getRowStyle:function(a){
+                        if(a.close_approach_data.length===0){
+                            return {border:' solid red', color:'red'};
+                        }
+                    },
+                    isMisingData:function(a){
+                        if(a.close_approach_data.length===0){
+                            return true;
+                        }
+                    },
+                    newtr: function(index){
+                        return "tr"+index;
+                    }
+            }});
+            
+            
+        </script>
+    </body>
+</html>

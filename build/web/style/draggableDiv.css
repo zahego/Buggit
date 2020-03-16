@@ -1,0 +1,38 @@
+/*right now, it's extremely difficult to move the origin or initial position of draggable, but high chance this could be resolve with additional library (jQuerry)*/
+#draggableChatBox {
+  background-color: #111111;
+  position: absolute;
+  z-index: 9;
+  border: 1px solid rgb(52, 53, 54);
+  
+}
+
+#draggableChatBoxHeader {
+  font-size: 18px;
+  padding: 10px;
+  cursor: grab;
+  z-index: 10;
+  background-color: #003368;
+  color: #EEEEEE;
+  border: 1px solid rgb(52, 53, 54);
+}
+#draggableChatBoxHeader:active{
+  cursor: grabbing;  
+}
+#draggableChatBoxBody{
+    padding-top:10px;
+    padding-left: 10px;
+    text-align: left;
+    height: 200px;
+    width: 150px;
+}
+
+#draggableChatBoxTextArea{
+    background-color: #EEEEEE;
+    text-align: right;
+    line-height: 30px;
+}
+#draggableChatBoxTextArea p{
+    color: #003368;
+    margin:0;
+}

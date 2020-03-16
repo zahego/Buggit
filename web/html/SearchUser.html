@@ -1,0 +1,40 @@
+<div id="listHere" class="clickSort"></div>
+
+        <script src="js/ajax.js"></script>
+        <script src="js/MakeTable.js"></script>
+        <script src="js/MakeSortableTable.js"></script>
+        <script>
+
+            "use strict"; // turn off the "auto variable declaration" feature of the browser.
+
+            function formatCurrency(num) {
+                var myNum = Number(num);
+                return myNum.toLocaleString("en-US", {style: "currency", currency: "USD", minimumFractionDigits: 2});
+            }
+            function addkb(num) {
+                var myNum = Number(num);
+                return myNum.toString()+"kb";
+            }
+
+            // invoke ajax function to read cars.json and if the call was successful, 
+            // run function processJSON, otherwise, put an error message in the DOM element 
+            // that has id "listHere".
+            ajax("json/WebUser.json", processData, "listHere");
+
+            function processData(WebUserList) {
+
+                console.log(WebUserList);  // car list as an array of objects
+
+                // modify properties (image and price) of the array of objects so it will look 
+                // better on the page.
+                for (var i = 0; i < WebUserList.length; i++) {
+                    //WebUserList[i].MembershipFee = "<img  src='" + WebUserList[i].image + "'>";
+                    WebUserList[i].MembershipFee = formatCurrency(WebUserList[i].MembershipFee);
+                }
+
+                // Making a DOM object, nothing shows yet... 
+                MakeSortableTable(WebUserList, "listHere", "WebUserID");
+
+            }
+
+        </script>

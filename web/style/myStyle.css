@@ -1,0 +1,204 @@
+html,
+body {
+    padding: 0;
+    min-height:100%;
+    min-width: 100%;
+    font-family: "Roboto Light", "Roboto", san-serif;
+    position: absolute;
+    background-color: #111111 !important;
+
+}
+
+#pageTitle{
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size: 45px;
+    font-weight: normal;
+    letter-spacing: 1.5px;
+    text-align: right;
+    float: left;
+    position: relative;
+    color: #27A4D2;
+}
+
+#pageTitle span{
+    height: 50%;
+    overflow: hidden;
+    color: #EEEEEE;
+    position: absolute;
+    
+}
+
+p{
+    color: #EEEEEE;
+}
+h3{
+    color: #EEEEEE;
+}
+a {
+  color: #27A4D2;
+}
+
+#content{
+    min-width: 920px;
+    margin-top: 150px;
+    /* added for fixed layout: prevent content from being hidden under titleNav */
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+}
+title{
+    font-size: 20px;
+}
+#titleNav{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    font-family: serif;
+    background-color: rgb(26, 26, 27);
+    height: 65px !important;
+    z-index: 2;
+    border-bottom: 1px solid rgb(52, 53, 54);
+    
+}
+
+#front_img {
+    left: 0px;
+    width: auto;
+    line-height: 70px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+}
+
+#front_img b{
+    position: sticky;
+    font-size: 150px; 
+    top: 70%;
+    color: rgb(246, 88, 147);
+}
+
+#footer{
+    position: fixed;
+    bottom: 0;
+    left:40%;
+    text-align: center;
+    margin-top: 5px;
+    min-width:15%;
+    background-color: rgb(26, 26, 27);
+    color: white;
+    border-top: 1px solid rgb(52, 53, 54);
+    
+}
+#footer:hover{
+    background-color: white;
+    color: #27A4D2;
+}
+
+#nav .menu .submenu {
+    margin-top: 2em;
+    position: absolute;
+    padding: 1em 0px 0px 0px;
+    left: 0px;
+    font-size: 14px;
+    line-height: 20px;
+    display: none;
+    height: auto;
+    width:100%;
+}
+.menu, .dash {
+    /* this is a floated left div that will hold one nav link */
+    
+    padding-bottom: 28px;
+    text-align: center;
+    position: relative;
+    float:left;
+    z-index: 3;
+    margin-bottom: 20px;
+    color:#C8C8C8;
+}
+.menu{
+    letter-spacing: 1px;
+    padding: 1em;
+    font-size: 15px;
+    padding-top: 1em;
+}
+.dash{
+    font-size: 25px;
+    padding-top: 7px;
+}
+
+#nav {
+    margin-right: 2%;
+    float: right;
+    letter-spacing: 1px;
+    font-size: 18px;
+    padding: 6px;
+    padding-top: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration:none;
+    min-width: 120px;
+    z-index: 3;
+    
+}
+
+
+#nav .menu:hover {
+    background-color: rgb(226, 211, 225);
+    color: #003368;
+}
+#nav .menu .submenu a:hover {
+    color: #F65893;
+}
+#nav .menu .submenu a {
+    color: #C8C8C8;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(226,211,225);
+}
+.menu a:hover {
+    text-decoration: none;
+}
+
+#nav .menu div:hover {
+    background-color: #003368;
+    color: #003368;
+}
+
+.menu a:visited {
+    color: #C8C8C8;
+}
+
+.menu div:hover,
+.menu:hover a:visited{
+    color: #003368;
+}
+
+
+.stopFloat {
+    clear: both;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #EEEEEE; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0C79BC; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #003368; 
+}
+
