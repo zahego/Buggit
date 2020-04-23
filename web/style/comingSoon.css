@@ -3,7 +3,7 @@ body, html {
   margin: 0;
 }
 .comingSoonBgImg{
-    background-image: url('../img/colorPalette.png');
+    background-image: url('../img/wallpaper.png');
     height: 100%;
     background-position: center;
     background-size: cover;
@@ -39,11 +39,21 @@ body, html {
 .bottomLeft {
   position: absolute;
   bottom: 0;
-  left: 10px;
+  left: 20px;
+  bottom: 20px;
   text-align: center;
   font-stretch: condensed;
   font-weight: bold;
-  color: #383D41;
+  
+  
+}
+.bottomLeft{
+  width: 150px;
+  height: 40px;
+}
+.bottomLeft button a{
+  color: #EEEEEE;
+  text-decoration: none;
 }
 
 #timer {

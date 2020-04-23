@@ -1,3 +1,4 @@
+
 html,
 body {
     padding: 0;
@@ -19,6 +20,7 @@ body {
     float: left;
     position: relative;
     color: #27A4D2;
+    transition: all 0.4s ease-in;
 }
 
 #pageTitle span{
@@ -28,6 +30,9 @@ body {
     position: absolute;
     
 }
+#pageTitle:hover{
+    text-shadow: 0 0 10px #F65893, 0 0 40px #F65893, 0 0 10px #F65893;
+}
 
 p{
     color: #EEEEEE;
@@ -35,9 +40,39 @@ p{
 h3{
     color: #EEEEEE;
 }
+h2{
+    font-family: "Roboto Light", "Roboto", serif;
+}
 a {
   color: #27A4D2;
 }
+a:visited{
+    text-decoration: none;
+}
+input, select{
+    border: 2px solid rgb(39,164,210);
+    background-color: rgb(26,26,27);
+    color: #EEEEEE;
+    outline:none;
+}
+input:focus, select:focus{
+    border-color: #F65893; 
+    outline:none;
+}
+
+
+button{
+    border: thin solid #EEEEEE;
+    background-color: #0C79BC;
+    color: #EEEEEE;
+    transition: all 0.4s ease-in;
+}
+
+button:hover{
+    box-shadow: 0 0 40px #27A4D2;
+    background-color: #27A4D2;
+}
+
 
 #content{
     min-width: 920px;
@@ -74,7 +109,7 @@ title{
 
 #front_img b{
     position: sticky;
-    font-size: 150px; 
+    font-size: 120px; 
     top: 70%;
     color: rgb(246, 88, 147);
 }
@@ -162,6 +197,9 @@ title{
 }
 .menu a:hover {
     text-decoration: none;
+}
+#nav .submenu{
+    background-color: black;
 }
 
 #nav .menu div:hover {

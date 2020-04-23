@@ -2,6 +2,10 @@ function comingSoonPage(id) {
 
     // ` this is a "back tick". Use it to define multi-line strings in JavaScript.
     var content = `
+    <style>
+    body{
+    color: #111111;}
+    </style>
     <div class="comingSoonBgImg">
     
     <div id="middle" class="middleBold">
@@ -14,8 +18,9 @@ function comingSoonPage(id) {
     </div>
     
     <div class="bottomLeft">
-    <button id="returnHomePage">
-    return to homepage
+    <button type="button">
+    <a href="index.html">
+    return to homepage</a>
     </button>
     </div>
     </div>
@@ -64,8 +69,5 @@ var x = setInterval(function() {
     document.getElementById("timer").innerHTML = "EXPIRED";
   }
 }, 1000);
-if(document.getElementById("returnHomePage").onclick){
-function addCounter() {
-        document.body.innerHTML="hello";}}
 
 }

@@ -3,23 +3,17 @@ var logOn={};
 logOn.UI=function (id) {
  var contentLogOn =
         `
-   <style>
-    h1{
-    color: rgb(0,51,104) !important;
-    }
-    body{
-    
-    }</style>
     <div class='logOn'>
     <h1>Enter your email and password</h1>
     <p style="color: rgb(226,211,225))"> sth like email= 123@ho.ho, pswd= 11<p>
     <br/>
     <form style="color: #27A4D2">
-    Email Address <input type="text" id="logonEmailAddress"/>
-    &nbsp;
-    Password <input type="password" id="logonPassword"/>
-    &nbsp;
-    <input type="button" value="Submit" onclick="logOn.findUser('logonEmailAddress','logonPassword','msgArea')"/>
+    <input type="text" id="logonEmailAddress" placeholder="Email Address"/>
+    <br/>
+    <input type="password" id="logonPassword" placeholder="Password"/>
+    <br/>
+    <button type="button" onclick="logOn.findUser('logonEmailAddress','logonPassword','msgArea')">Submit</button>
+    <div class="stopFloat"></div>
     </form>
     <br/> <br/>
     <div id="msgArea" class="clickSort"></div>
@@ -43,7 +37,7 @@ function processLogon(httpRequest) { // this function defined inside of logonFn,
  target.innerHTML = "<br/>";
  if (obj.webUserList.length === 0) {
      if(emailUserInput.length===0||pwUserInput.length===0){
-         target.innerHTML = "<p style ='color:rgb(246,88,147)'>Missing email or password imput</p>";}
+         target.innerHTML = "<p style ='color:rgb(246,88,147)'>Missing email or password input</p>";}
      else{
  target.innerHTML = "<p style ='color:rgb(246,88,147)'>There is no user with email '" + emailUserInput + "' or you have typed the incorrect password  </p>";}
 } else if (obj.webUserList[0].errorMsg.length > 0) {

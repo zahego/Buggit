@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Demo</title>
+        <link href="myStyle.css" rel="stylesheet" type="text/css" />
+        <link href="comingSoon.css" rel="stylesheet" type="text/css" />
+        <link href="draggableDiv.css" rel="stylesheet" type="text/css" />
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        <style>
+        [v-cloak]{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="comingSoonID">
+  
+        </div>
+        
+        <div id="draggableDib"></div>
+        <script src="makeComingSoon.js"></script>
+        <script src="makeDraggableDiv.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   
+        <script>
+            var ComingSoonDisplay = MakeComingSoon("comingSoonID");
+            //var ComingSoonDisplay2 = MakeComingSoon("comingSoonID2");
+            var DragDiv = MakeDraggableDiv("draggableDib");
+            //var DragDiv = MakeDraggableDiv("draggableDib2");
+            document.getElementById("draggableDib").initPosition(80, 50);
+            document.getElementById("comingSoonID").setYoutube({video:"USnLmrEP7TU", autoplay:"1", loop:"1"});
+            
+            //document.getElementById("comingSoonID2").setYoutube({video:"BoZnQNtrO2k", autoplay:"1", loop:"1"});
+            document.getElementById("comingSoonID").setSound(10);
+            //document.getElementById("comingSoonID2").setSound(0);
+            document.getElementById("comingSoonID").timerFunc();
+            //document.getElementById("comingSoonID2").timerFunc();
+            
+
+        </script>
+
+    </body>
+</html>

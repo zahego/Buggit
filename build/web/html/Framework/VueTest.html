@@ -66,6 +66,8 @@ and open the template in the editor.
                     <!--v-on: was drop and replaced with @ only -->
                     <button type="submit" @click="process" class="btn btn-primary">Submit</button>
                     <h2  class="mt-5" id="spec">{{testPhrase2()}}</h2>
+                    <new-cool-component-come-this-way></new-cool-component-come-this-way>
+                    <my-component v-for="i in 3"></my-component>
                 </form>
 
 
@@ -73,7 +75,14 @@ and open the template in the editor.
                 <!--v-cloak to hide element before the page mounting so when the page mount, the element is not visible-->
                 <div v-show="submitted===2" v-cloak>
                     <h2  class="mt-5" id="spec">{{testPhrase2()}}</h2>
-                    <img :src="imgSrc" :title="imgTitle"></img>
+                    <a-pod>
+                        <h3 slot="title">#1</h3>
+                        <p slot="caption">Here's today coolest picture</p>
+                    </a-pod>
+                    <a-pod date="2018-07-07">
+                        <h3 slot="title">#2</h3>
+                        <p slot="caption" slot-scope="pic">Here's a blast from a past from {{pic.date}}</p>
+                    </a-pod>
                     <button type="submit" @click="unprocess" class="btn btn-primary">Click here to navigate back</button>
                     <button type="submit" @click="process2" class="btn btn-primary">Click here to navigate forward</button>
                 </div>
@@ -141,6 +150,55 @@ and open the template in the editor.
         <!--the order of id, script source and the call of id element in new Vue object matters. 
         If the order is messed up, undefined error will occur -->
         <script>
+            Vue.component('my-component', {
+                template: '<strong> A static component </strong>'
+            });
+            Vue.component('a-pod', {
+                template: '<div>\
+                            <slot name="title"><h3>title</h3></slot>\
+                            <img :src="imgSrc" :title="imgTitle" style="width:500px">\
+                            <p>{{date || "today"}}</p>\
+                            <slot name="caption" :date="date"><p>{{date}}</p></slot>\
+                            </img>\
+                            </div>',
+                 props: ['date'],
+                 data: function(){
+                     return{
+                     imgSrc:"",
+                     imgTitle:""
+                 };
+                 },
+                 created:function(){
+                     this.fetchAPOD();
+                     
+                 },
+                 methods:{
+                     fetchAPOD: function(){
+                         
+                    var apiKey="IGBvvSGLWhba8cxyG5Xa3oWUxjx5xaYNXoYRPiWG";
+                    var URL="https://api.nasa.gov/planetary/apod?api_key="+apiKey;
+                    
+                    if(this.date){
+                        URL+="&date="+this.date;
+                    }
+                    //the fuck, if 'this' is used alone, it wont work, must wrap this in a var element
+                    var self=this;
+                             axios.get(URL).then(function (response) {
+                    // handle success
+                    self.imgSrc=response.data.url;
+                    self.imgTitle=response.data.title;
+                    });
+                    }
+                }
+            });
+            var newComponent={
+              data: function() {
+                  return{
+                      msg: "hello from another component"
+                  }
+              },  
+              template: '<h1>{{msg}}</h1>'
+            };
             
             var vm=new Vue({
                  el: '#firstTest', //for root element selector
@@ -149,10 +207,12 @@ and open the template in the editor.
                      text: "johnson",
                      submitted: 1,
                      testPhrase: "say what? how can Vue be used in a pure vanilla JS environment!!",
-                     imgSrc:"",
-                     imgTitle:"",
+                    
                      asteroid:[],
                      showDataSummary:true
+                 },
+                 components: {
+                     'new-cool-component-come-this-way': newComponent,
                  },
                  computed:{
                      numAsteroid:function(){
@@ -176,7 +236,6 @@ and open the template in the editor.
                      }
                  },
                  created:function(){
-                     this.fetchAPOD();
                      this.fetchAsteroid();
                  },
                  methods:{
@@ -196,15 +255,7 @@ and open the template in the editor.
                          event.preventDefault();
                          this.submitted=1;
                      },
-                     fetchAPOD:function(){
-                    var apiKey="IGBvvSGLWhba8cxyG5Xa3oWUxjx5xaYNXoYRPiWG";
-                    var URL="https://api.nasa.gov/planetary/apod?api_key="+apiKey;
-                             axios.get(URL).then(function (response) {
-                    // handle success
-                    vm.imgSrc=response.data.url;
-                    vm.imgTitle=response.data.title;
-                    });
-                    },
+                    
                     fetchAsteroid:function(){
                     var apiKey="IGBvvSGLWhba8cxyG5Xa3oWUxjx5xaYNXoYRPiWG";
                     var URL="https://api.nasa.gov/neo/rest/v1/neo/browse?api_key="+apiKey;

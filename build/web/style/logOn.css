@@ -1,0 +1,45 @@
+.logOn{
+    left: 37%;
+    position: absolute;
+    text-align: center;
+    
+}
+
+.logOn h1{
+    color: rgb(0,51,104) !important;
+}
+.logOn form{
+    left: 12%;
+    position: relative;
+}
+.logOn input, select{
+    
+    width: 300px;
+    height: 30px;
+    display: block;
+    padding-left: 10px;
+    border-radius: 24px;
+    transition: all 0.4s ease-in;
+}
+
+.logOn button{
+    width: 150px;
+    height: 30px;
+    display: block;
+    left: 20%;
+    position: relative;
+}
+select{
+    width: 312px;
+    height: 36px;
+    font-family: "Roboto Light", "Roboto", san-serif;
+}
+select-hide {
+  display: none;
+}
+
+
+.logOn td{
+    height: 50px;
+    color: #F65893;
+}

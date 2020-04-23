@@ -18,6 +18,8 @@ public class StringData {
     public String webUserId = "";
     public String userEmail = "";
     public String userPassword = "";
+    public String userPassword2 = "";
+    public String image ="";
     public String birthday = "";
     public String membershipFee = "";
     public String userRoleId = "";   // Foreign Key
@@ -36,6 +38,7 @@ public class StringData {
             this.userEmail = FormatUtils.formatString(results.getObject("user_email"));
             this.userPassword = FormatUtils.formatString(results.getObject("user_password"));
             this.birthday = FormatUtils.formatDate(results.getObject("birthday"));
+            this.image = FormatUtils.formatString(results.getObject("image"));
             this.membershipFee = FormatUtils.formatDollar(results.getObject("membership_fee"));
             this.userRoleId = FormatUtils.formatInteger(results.getObject("web_user.user_role_id"));
             this.userRoleType = FormatUtils.formatString(results.getObject("user_role_type"));
@@ -45,7 +48,7 @@ public class StringData {
     }
 
     public int getCharacterCount() {
-        String s = this.webUserId + this.userEmail + this.userPassword + this.birthday
+        String s = this.webUserId + this.userEmail + this.userPassword + this.userPassword2 + this.birthday+ this.image
                 + this.membershipFee + this.userRoleId + this.userRoleType;
         return s.length();
     }
@@ -54,7 +57,9 @@ public class StringData {
         return "Web User Id:" + this.webUserId
                 + ", User Email: " + this.userEmail
                 + ", User Password: " + this.userPassword
+                + ", User Password 2: "+ this.userPassword2
                 + ", Birthday: " + this.birthday
+                + ", Image: " + this.image
                 + ", Membership Fee: " + this.membershipFee
                 + ", User Role Id: " + this.userRoleId
                 + ", User Role Type: " + this.userRoleType;

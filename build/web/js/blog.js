@@ -55,7 +55,7 @@ function blog(id) {
     Can't debug as well since console.log within the injection area doesnt work</p>
 <p>Third: the combination of sorting and filtering isn't too hard. It takes quite some trials and errors though</p>
     
-<h3>Homework 4: SlideShow Component</h3>
+<h3>Homework 4a: SlideShow Component</h3>
 <p>
     In this assignment, I work on the slideshow component and how to manipulate DOM property inside JS file. Gotta say, this assignment was really a crime against humanity. 
 Never has I seen this much trouble in my hw in this class before.
@@ -69,6 +69,9 @@ Never has I seen this much trouble in my hw in this class before.
 <p>Fifth: dom object seems to have a lot of issue regarding non dom property</p>
 <p>Sixth: My code is still very hard code right now, can't change other property like padding, margin, can only do number, no px, no string, borderLeft doesnt work</p>
 <p>Overall terrible experience. 10/10 would try again</p>
+
+<h3>Homework 4b: Tutrial proposal</h3>
+<p>I also made a tutorial proposal, check it out <a href="tutorial/poc.html">here</a></p>
     
 <h3>Homework 5: WebAPI</h3>
 <p>In this assignment, I created 2 jsp file to show the user and other information by pulling them from an external database. I also try out Vue and React in the spare time</p> 
@@ -78,6 +81,35 @@ I expect authorization means who has access to the data, when authentication is 
 <p> Click <a href="html/databaseError.docx">Here</a> to see my document about java DB access errors </p>
 <p>Click <a href="webAPIs/listUsersAPI.jsp">here</a> for the Web API that lists the users from my DB and <a href="webAPIs/listOtherAPI.jsp">here</a> for the Web API that lists the other from my DB</p>
 
+<h3>Homework 6: Log on</h3>
+<p>In this assignment, I created 3 jsp and js page to add the functionality to log on, log off and see profile when log on</p> 
+<p>The issue lies mostly on the StringData and StringDataList data type incompatible in many function at JSP page, WebUserView java page that I've experience in the lab so the fix was quick.<p>
+<p>Link to <a href="#/logOn">Log On</a>, link to <a href="#/logOff">Log Off</a>, and link to <a href="#/getProfile">getProfile</a>.</p>
+    
+<h3>Homework 7a: Insert</h3>
+<p>In this assignment, I create made 2 insert functions and 2 list in userCRUD and otherCRUD</p> 
+<p>The assignment is attrocious. Data type incompatible everywhere. Many changes was made, the first one being changing JSON.parse(http.responseText) to just http alone<p>
+<p>The second being the incorrect placement of Prepare statement. It lead to a troublesome error of membership_fee field not accepting result. Turn out I placed image
+field there. Cost me a solid 2-4 hours to solve it. I first thought it was a problem with my picklist</p>
+    <p>All of this assignment can be viewed in User Info->Web User and User Info->PRofile</p>
+<p>Quick link to <a href="#/userInsert">user insert</a> and <a href="#/otherInsert"> other insert</a></p>    
+
+<h3>Homework 7b: Tutorial</h3>
+<p>In this assignment, I create 2 reusable components in js.</p> 
+<p>The assignment is a real pain. The design specification is really confusing. I managed to pull through<p>
+<p>Link to <a href="tutorial/index.html">the tutorial</a> and <a href="tutorial/download/demo.html">the demo</a></p>
+    
+<h3>Homework 8: Update</h3>
+<p>In this assignment, I create update function for user and other</p> 
+<p>The assignment is suppose to be easy, but for some reason I have to cut to many corners, and even still, I still got a really bad time<p>
+<p>Main issue is that I forgot to pass in the Profile Id, which break the entire function completely<p>
+<p>Also, I will not published the link right away in order get the insert regraded as there are some stuff that was</p>
+<p>Also, there is a fundamental design flaw with my other insert, which will be fixed later. However, this flaw should not affect the functionality of the insert at all</p>
+<p>For the link to the database, refer to the database asignment above</p>
+    
+<h3>Homework 9: Delete</h3>
+<p>In this assignment, I create delete function for user and other</p> 
+<p>Extremely easy assignment, finish in 2 hours or less while I was listening to some youtube video in the background. Mostly testing to fit the code.<p>
 
     `;
     document.getElementById(id).innerHTML = contentBlog;

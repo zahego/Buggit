@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Tutorial explanation</title>
+        <meta charset="UTF-8">
+         
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../style/myStyle.css" rel="stylesheet" type="text/css" />
+        <style>
+            body{
+                margin:0;
+            }
+            div{
+                
+                padding-bottom: 100px;
+            }
+            h1{
+                color: #F65893;
+                padding: 0 10% ;
+                text-align: center;
+                width: 80%;
+                margin: 0;
+                position: relative;
+            }
+            h3{
+                color: #F65893;
+                padding-left: 2%;
+            }
+            h6{
+                color: #1B80B6;
+                padding-left: 2%;
+            }
+            p{
+                padding: 0 5%;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="border: 1px solid rgb(52, 53, 54); background-color: rgb(26, 26, 27); padding-bottom: 10px;">
+        <img src="https://i.pinimg.com/originals/f6/c7/2f/f6c72f192f48dec1860ca7771248fa2d.png" style="width:70px; height: 70px; top: 15px; position:absolute; left: 2%"/>
+        <img src="https://i.pinimg.com/originals/f6/c7/2f/f6c72f192f48dec1860ca7771248fa2d.png" style="width:70px; height: 70px; top: 15px; position:absolute; right: 4%; transform: scaleX(-1);"/>
+        <h1>Extremely cool tutorial: </h1>
+        <h1>Scroll bar customization, Coming Soon Page, Timer function, Draggable Chatbox with Vue framework, YT player API</h1>
+        </div>
+        
+        <div class="stopFloat">
+             <h3>Introduction</h3>
+            
+            <p>for this tutorial, I will be showing you how to customize your own scroll bar, combine timer to an awesome coming soon page, dabble with Vue framework(pronounce "view")
+                to create a responsive draggable chat box, and using the YT API system to auto play music on page opened.</p>
+            <p><i>for anyone grading this tutorial. I have 2 "MakeWidget" js page, one is named MakeComingSoon, the other is named makeDraggableDiv. This is for OOP practice for better file management.
+                    There are 2 main css file instead of 1 for OOP practice. "mystle.css" is not needed but still included for consistency between this tutorial and the website as a whole.
+                    Also the steps for each part is stored in codepen. So there is only the final version when download.</i></p>
+            <p>Some background: I use these online tutorial to aid my process, check them out as well:</p>
+            <p><a href="https://www.w3schools.com/howto/howto_js_draggable.asp">Draggable Div</a></p>
+            <p><a href="https://www.w3schools.com/howto/howto_css_coming_soon.asp">Coming Soon Page</a></p>
+                <p><a href="https://www.w3schools.com/howto/howto_js_countdown.asp">Count down Timer</a></p>
+                <p><a href="https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp">Custom Scroll Bar</a></p>
+                <p><a href="https://developers.google.com/youtube/iframe_api_reference">Youtube API player</a></p>
+                <p><a href="https://www.linkedin.com/learning/learning-vue-js-3/get-to-know-the-vue-js-javascript-framework">Vue Framework Essential Training</a>. Need a Lynda account to access</p>
+                <p>Click this <a href="download/demo.html">Demo Link</a> to get to the demo</p>
+                <p>Click this <a href="download.zip">Zip file</a> to download the whole project</p>
+            </div>
+
+
+
+
+            <div>
+                <h3>Scroll bar customization</h3>
+                <h6>Difficulty: 1/10</h6>
+                <p>This is completely done with css. Create a css file, named it CustomScrollBar.css or however you want</p>
+                <p>Add the css code below to the file. Test it by making many paragraphs to overflow the page and make the scrollbar appear</p>
+                <p>Since the scroll-bar isn't a normal css property. The webkit custom element is there to make the customization happens. This means that certain browser will not accept this customization</p>
+                <p>The property of the scroll bar is expected to change is the track, thumb and the scroll bar itself when hovered</p>
+                <iframe height="265" style="width: 90%;" scrolling="no" title="custom scrollbar" src="https://codepen.io/zahego/embed/jObVYqM?height=265&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+                    See the Pen <a href='https://codepen.io/zahego/pen/jObVYqM'>custom scrollbar</a> by zahego
+                    (<a href='https://codepen.io/zahego'>@zahego</a>) on <a href='https://codepen.io'>CodePen</a>.
+                </iframe>
+            </div>
+
+
+
+
+            <div>
+                <h3>Coming Soon Page with Timer Fucntion</h3>
+                <h6>Difficulty: 3/10</h6>
+                <p>This is completed with CSS and JS. You still need only 1 html div as a location to attach your code in or you can attach it to the html body itself(not a good practice though)</p>
+                <p>Create a css and a js file to host these codes below.</p>
+                <p>First, create all the necessary element of the coming soon page with js, including their class and id <strong>COMPLETELY WITH JS >;)</strong>. Add them to the html div in another html file</p>
+                <p>Within the background, these important component will be created:
+                <ul>
+                    <li><p>A heading text that say "Coming Soon Page"</p></li>
+                    <li><p>2 other text that provide extra info and tell more about the timer</p></li>
+                    <li><p>a timer</p></li>
+                    <li><p>a button to return to homepage</p></li>
+                    <li><p>other divs to help organize the styling</p></li>
+                </ul>
+            </p>
+                <iframe height="265" style="width: 90%;" scrolling="no" title="createComingSoonElements" src="https://codepen.io/zahego/embed/ZEbBvvv?height=265&theme-id=dark&default-tab=js" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+                    See the Pen <a href='https://codepen.io/zahego/pen/ZEbBvvv'>createComingSoonElements</a> by zahego
+                    (<a href='https://codepen.io/zahego'>@zahego</a>) on <a href='https://codepen.io'>CodePen</a>.
+                </iframe>
+                <p>Second, create the JS functionality of timer. Attach it within the MakeComingSoon(id) function above</p>
+                <p>The timer function is rather self-explanatory, but it constantly update the time different between now and a future moment set by the user</p>
+                <iframe height="265" style="width: 90%;" scrolling="no" title="timerFunct" src="https://codepen.io/zahego/embed/RwWoxBw?height=265&theme-id=dark&default-tab=js" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+                    See the Pen <a href='https://codepen.io/zahego/pen/RwWoxBw'>timerFunct</a> by zahego
+                    (<a href='https://codepen.io/zahego'>@zahego</a>) on <a href='https://codepen.io'>CodePen</a>.
+                </iframe>
+                <p>Third, attach this to the css file</p>
+                <p>The css file will contain the background image that you need to include in the project, as well as the styling for buttons and text</p>
+                <iframe height="265" style="width: 90%;" scrolling="no" title="ComingSoonCSS" src="https://codepen.io/zahego/embed/RwWoxYw?height=265&theme-id=dark&default-tab=css" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+                    See the Pen <a href='https://codepen.io/zahego/pen/RwWoxYw'>ComingSoonCSS</a> by zahego
+                    (<a href='https://codepen.io/zahego'>@zahego</a>) on <a href='https://codepen.io'>CodePen</a>.
+                </iframe>
+                <p>Fourth, run all of it together</p>
+            </div>
+
+
+
+
+
+            <div>
+                <h3>YT player API, auto play on start(Chrome compatible)</h3>
+                <h6>Difficulty: 8/10</h6>
+                <p>There are quite a lot of rendering priority issue and it's extremely hard to test audio, especially when Chrome have its policy update and doesn't allow for
+                    audio to auto play on start. This is bypasses by a fact that Chrome actually white list over 1000 websites, including Youtube, and let these website auto play video and music on start</p>
+                <p>This is completed with CSS and JS. You still need only 1 html div as a location to attach your code in or you can attach it to the html body itself(not a good practice though)</p>
+                <p>Create a css and a js file to host these codes below.</p>
+
+                <p>First, create all the necessary element of the audio div with js, including their class and id, similar to how you would create the coming soon page. 
+                    Add them to the html div in another html file like the coming soon page</p>
+                <p>Set the data video to any 11-digit code after a youtube video you wish to use the audio from. The 11-digit code below is just examples</p>
+                <p>This will allow for better customization in latter method</p>
+                <iframe height="265" style="width: 90%;" scrolling="no" title="createAudioElement" src="https://codepen.io/zahego/embed/NWGbXep?height=265&theme-id=dark&default-tab=js" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+                    See the Pen <a href='https://codepen.io/zahego/pen/NWGbXep'>createAudioElement</a> by zahego
+                    (<a href='https://codepen.io/zahego'>@zahego</a>) on <a href='https://codepen.io'>CodePen</a>.
+                </iframe>
+                <p>Second, create another js file to host these code below. This function allows to access the youtube API and return the video with user input
+                    parameter such as autoplay or loop. 
+                    The reason this must be on a separate file from the previous js file is because the function below won't load 
+                    together with the first part. This is probably due to the second function not attached to the first part as a private function <i>(ele.thisFunc=function(){})</i>. However,
+                    the timer function work without needing to make a private function so for now, this is resolved by make a different js file.</p>
+                <p>YT.player is the main method in this case, as it calls the youtube API and return the video requested with the parameter provided</p>
+                <iframe height="265" style="width: 90%;" scrolling="no" title="onYouTubeIFRameAPIReady" src="https://codepen.io/zahego/embed/MWabrdG?height=265&theme-id=dark&default-tab=js" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+                    See the Pen <a href='https://codepen.io/zahego/pen/MWabrdG'>onYouTubeIFRameAPIReady</a> by zahego
+                    (<a href='https://codepen.io/zahego'>@zahego</a>) on <a href='https://codepen.io'>CodePen</a>.
+                </iframe>
+
+                <p>Third, attach that js and a script to call youtube API from Youtube to the initial JS file by creating 2 script element. 
+                    Then create some customizable functions to change certain user input like volume, source or everything like the three functions belows</p>
+                <iframe height="265" style="width: 90%;" scrolling="no" title="YTScriptAndVolumeFunc" src="https://codepen.io/zahego/embed/JjYbpjq?height=265&theme-id=dark&default-tab=js" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+                    See the Pen <a href='https://codepen.io/zahego/pen/JjYbpjq'>YTScriptAndVolumeFunc</a> by zahego
+                    (<a href='https://codepen.io/zahego'>@zahego</a>) on <a href='https://codepen.io'>CodePen</a>.
+                </iframe>
+                <p>Fourth, run all of it together</p>
+            </div>
+
+
+            <div>
+                <h3>Draggable Chatbox with Vue framework</h3>
+                <h6>Difficulty: 10/10</h6>
+                <p>This is completed with CSS and JS. You still need only 1 html div as a location to attach your code in or you can attach it to the html body itself(not a good practice though)</p>
+                <p>Create a css and a js file to host these codes below.</p>
+                <p>One problem with this Draggable div is that I'm unable to do createElement like usual since there are too much render priority issues and some
+                    objects get renders before or after other object, making it impossible to incorporate all together. This is why I cheated a little bit and do 
+                    normal code injection. :((</p>
+                <p>First, create all the necessary element of the audio with js, including their class and id with normal code injection instead of createElement method. 
+                    Add the css in since some functionality also required the position:abosolute of css to work.
+                    Add them to the html div in another html file like the coming soon page</p>
+                <p>Basically, there are three main part for the Draggable Div: the header, the body and the text area</p>
+                <p>The header is the main draggable part, as well as containing the button for minimize function</p>
+                <p>The body is where the text input get display</p>
+                <p>The text area contain a text input box, a submit and a clear button</p>
+                <iframe height="265" style="width: 90%;" scrolling="no" title="InjectDraggableDivContent" src="https://codepen.io/zahego/embed/NWGbyrw?height=265&theme-id=dark&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+                    See the Pen <a href='https://codepen.io/zahego/pen/NWGbyrw'>InjectDraggableDivContent</a> by zahego
+                    (<a href='https://codepen.io/zahego'>@zahego</a>) on <a href='https://codepen.io'>CodePen</a>.
+                </iframe>
+                <p>Second, add an initial position to the div so that it doesn't obstruct other content. Then add 3 functions to 
+                    allow setting initial position, dragging the whole element, and minimize the element when needed </p>
+                <p>The function for setting initial position is self-explanatory. The function to drag the element will offset the top and the left position of
+                the whole element to the cursor position. The minimize will activate when the user click on the minimize line on the header. It will hide
+                the body and the text area and left only the header visible.</p>
+                <iframe height="265" style="width: 90%;" scrolling="no" title="ThreeFuncDragDiv" src="https://codepen.io/zahego/embed/OJybQpg?height=265&theme-id=dark&default-tab=js" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+                    See the Pen <a href='https://codepen.io/zahego/pen/OJybQpg'>ThreeFuncDragDiv</a> by zahego
+                    (<a href='https://codepen.io/zahego'>@zahego</a>) on <a href='https://codepen.io'>CodePen</a>.
+                </iframe>
+                <p> Third, Integrate some vue component in the same js file <i>(the vue cdn is already incorporated in the first step)</i></p>
+                <p>The vue element is mainly for text storing from the text input area and display it in the body.</p?
+                <p>Vue does provide a quicker way to work with displaying data but it takes 15 lessons of Vue to get to this point, so I'm not gonna explain everything that Vue does.</p>
+                <iframe height="265" style="width: 90%;" scrolling="no" title="VueDragDiv" src="https://codepen.io/zahego/embed/GRpNQmW?height=265&theme-id=dark&default-tab=js" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+                    See the Pen <a href='https://codepen.io/zahego/pen/GRpNQmW'>VueDragDiv</a> by zahego
+                    (<a href='https://codepen.io/zahego'>@zahego</a>) on <a href='https://codepen.io'>CodePen</a>.
+                </iframe>
+                <p>Finally, add them all together </p>
+            </div>
+        
+            <p>Click <a href="../index.html">here</a> to return to homepage</p>
+
+    </body>
+</html>

@@ -12,6 +12,7 @@ and open the template in the editor.
         <link href="style/slideShow.css" rel="stylesheet" type="text/css" />
         <link href="style/comingSoon.css" rel="stylesheet" type="text/css" />
         <link href="style/draggableDiv.css" rel="stylesheet" type="text/css" />
+        <link href="style/logOn.css" rel="stylesheet" type="text/css" />
         
         
         
@@ -20,15 +21,17 @@ and open the template in the editor.
         
         <div id="titleNav">
 
-            <div id="pageTitle">
+            <div id="pageTitle" >
+                <a href="#/home" style="text-decoration: none; color: #27A4D2 ;">
                 <span>
                     Bugg<b>IT</b>
                 </span>
                 Bugg<b style="color: #003368">IT</b>
+                </a>
             </div>
 
             <div id="nav">
-                <div class="menu" onclick="toggleSubMenu(this)">
+                <!--<div class="menu" onclick="toggleSubMenu(this)">
                     Search JSON
                     <div class="submenu">
                         <a href="#/users">Search User</a>
@@ -38,15 +41,15 @@ and open the template in the editor.
                         <a href="#/slideShow">Slide Show</a>
                     </div>
                 </div>
-                <!--<div class="slash">|</div>-->
-                <div class="dash">|</div>
+                <div class="slash">|</div>
+                <div class="dash">|</div>-->
 
                 <div class="menu" onclick="toggleSubMenu(this)">
-                    User Info JSP
+                    Search
                     <div class="submenu">
-                        <a href="#/usersView">Web User</a>
+                        <a href="#/userList">Web User</a>
                         <br>
-                        <a href="#/othersView">Profile</a>
+                        <a href="#/otherList">Profile</a>
                     </div>
                 </div>
                 <div class="dash">|</div>
@@ -54,18 +57,16 @@ and open the template in the editor.
                 <div class="menu" onclick="toggleSubMenu(this)">
                     Page
                     <div class="submenu">
-                        <a href="https://www.reddit.com/">Reddit</a>
+                        <a href="#/comingSoonPage">POC</a>
                         <br>
-                        <a href="https://stackoverflow.com/">Stack</a>
+                        <a href="tutorial/index.html">Tutorial</a>
                         <br>
-                        <a href="#/comingSoonPage">Coming Soon vJS</a>
-                        <br>
-                        <a onClick="parent.location.replace('tutorial/poc.html')">Coming Soon vHTML</a>
+                        <a href="tutorial/download/demo.html">Demo</a>
                     </div>
                 </div>
                 <div class="dash">|</div>
 
-                <div class="menu" onclick="toggleSubMenu(this)">
+                <!--<div class="menu" onclick="toggleSubMenu(this)">
                     Framework
                     <div class="submenu">
                         <a onclick="html/Framework/VueTest.html">Vue</a>
@@ -75,20 +76,29 @@ and open the template in the editor.
                         <a href="#/slideShow">Angular</a>
                     </div>
                 </div>
-                <div class="dash">|</div>
+                <div class="dash">|</div>-->
 
                 <div class="menu" onclick="toggleSubMenu(this)">
                     Account
                     <div class="submenu">
-                        <br>
                         <a href="#/logOn">Log on</a>
                         <br>
                         <a href="#/logOff">Log off</a>
                         <br>
                         <a href="#/getProfile">Get profile</a>
+                        <br>
+                        <a href="#/userInsert">Register</a>
                     </div>
                 </div>
                 <div class="dash">|</div>
+
+                <!--<div class="menu" onclick="toggleSubMenu(this)">
+                    Social Media
+                    <div class="submenu">
+                        <a href="#/comingSoonPage">Question Thread</a>
+                    </div>
+                </div>
+                <div class="dash">|</div>-->
                 <div class="menu"><a href="#/home">Home</a></div>
                 <div class="dash">|</div>
                 <div class="menu"><a href="#/blog">Blog</a></div>
@@ -130,13 +140,31 @@ and open the template in the editor.
         <script src="js/logOn.js"></script>
         <script src="js/logOff.js"></script>
         <script src="js/getProfile.js"></script>
+        <script src="js/userCRUD.js"></script>
+        <script src="js/otherCRUD.js"></script>
+        <script src="js/makePickList.js"></script>
         
         <!--<script src="js/framework/vue.js"></script>-->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script>
         
                         
-                        
+        function showHide() {
+         var x = document.getElementById("draggableDivVue");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                    } else {
+                    x.style.display = "none";
+                }
+         var x = document.getElementById("line");
+                if (x.style.transform === "rotate(90deg)") {
+                    x.style.transform = "rotate(0)";
+                    } else {
+                    x.style.transform = "rotate(90deg)";
+                }
+        document.getElementById("draggableChatBox").style.left="80%";
+        document.getElementById("draggableChatBox").style.top="56%";
+            }                
                         
         function setContent(httpRequest) {
                 console.log("Ajax call was successful.");
@@ -168,7 +196,7 @@ and open the template in the editor.
         function toggleName(){
             var nameChange=document.getElementById("footer");
             if(nameChange.innerHTML==="Minh Tran Hoang"){
-            nameChange.innerHTML="Kent M Kosuke and Takashi Pham";
+            nameChange.innerHTML="Kent M Kosuke";
             }
             else{
              nameChange.innerHTML="Minh Tran Hoang";   
@@ -191,6 +219,11 @@ and open the template in the editor.
                         myRoutes['/logOn'] = logOn.UI;
                         myRoutes['/logOff'] = logOff.UI;
                         myRoutes['/getProfile'] = getProfile.UI;
+                        myRoutes['/userInsert'] = userCRUD.UI;
+                        myRoutes['/userList'] = userCRUD.list;
+                        myRoutes['/otherInsert'] = otherCRUD.UI;
+                        myRoutes['/otherList'] = otherCRUD.otherList;
+                        
                         //myRoutes['/vueStuff']= vueStuff;
                         //myRoutes['/comingSoonPage'] = comingSoonPage;
                         

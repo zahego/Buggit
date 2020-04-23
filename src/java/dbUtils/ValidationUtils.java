@@ -53,6 +53,9 @@ public class ValidationUtils {
         if ((val.length() == 0) && !required) {
             return "";  // Since this field is not required, empty string is valid user entry.
         }
+        else if(val.matches("^[a-zA-Z]*$")){
+            return "Please enter an dollar amount";
+        }
         try {
             java.math.BigDecimal convertedDecimal = new java.math.BigDecimal(val); // not using (on purpose).
             return "";
