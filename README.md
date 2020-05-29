@@ -67,6 +67,8 @@ Framework: [Vuejs](https://vuejs.org/)
 web: HTML, CSS, JS,  
 server: JSP, Java, MySQL  
 JAR: gson-2.6.2, mysql-connector-java-5.1.46-bin  
+ssh: Putty
+sftp: WinSCP
 
 
 ### Contributors
