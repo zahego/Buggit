@@ -1,6 +1,6 @@
 
 ## Buggit
-[http://cis-linux2.temple.edu:8080/SP20_3308_tug70814/](http://cis-linux2.temple.edu:8080/SP20_3308_tug70814/index.html#/home)  
+site: [http://cis-linux2.temple.edu:8080/SP20_3308_tug70814/](http://cis-linux2.temple.edu:8080/SP20_3308_tug70814/index.html#/home)  
 A (almost) social media site that is sipposed to be the combination of Reddit and Stackoverflow. Or at least that's what it is intended to be.
 I created this with vanilla JS, HTML and CSS for Web Dev course at Temple University
 
@@ -34,8 +34,8 @@ In case you would like to make this project your own, you need your own MySQL da
 
 
 ### Prequesite
-a server like [Glassfish](https://javaee.github.io/glassfish/) or [Tomcat](http://tomcat.apache.org/), 
-or [VsCode live server plugin](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+a server like [Glassfish](https://javaee.github.io/glassfish/) or [Tomcat](http://tomcat.apache.org/),   
+or [VsCode live server plugin](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)  
 [MySQL](https://www.mysql.com/products/workbench/) if you want to host your own data
 
 
@@ -63,7 +63,7 @@ explore the functionalities
 
 
 ### Built With
-Framework: Vuejs  
+Framework: [Vuejs](https://vuejs.org/)  
 web: HTML, CSS, JS,  
 server: JSP, Java, MySQL  
 JAR: gson-2.6.2, mysql-connector-java-5.1.46-bin  
