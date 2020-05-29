@@ -11,7 +11,7 @@ In case you would like to make this project your own, you need your own MySQL da
 
 
 ### Notable feature
-- Single Page Application (main content that is)
+- Single Page Application (main content that is) with JS injected content  
 - Self created APIs using JSP technologies
 - CRUD functionalities, log on/off, filter, etc...
 - SQL injection prevention with preparedStatement
