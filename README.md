@@ -69,7 +69,9 @@ server: JSP, Java, MySQL
 JAR: [gson-2.6.2.jar](https://repo1.maven.org/maven2/com/google/code/gson/gson/2.6.2/),
 [mysql-connector-java-5.1.46-bin.jar](https://dev.mysql.com/downloads/connector/j/5.1.html)  
 ssh: Putty  
-sftp: WinSCP
+sftp: WinSCP    
+server: Glassfish, Apache  
+API: Youtube Player API
 
 
 ### Contributors
