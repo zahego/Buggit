@@ -25,6 +25,8 @@ In case you would like to make this project your own, you will need your own MyS
 - Audio autoplay at Page/Demo, even on Chrome, which is extremely difficult since Chrome new policy on audio autoplay
 - Many reusable JS components. Many reusable component create the whole HTML interface with functionlaity similar to a React component
 - Detailed tutorial with codePen iframe
+- Count down function in Page/Demo
+- A dynamic component of coming soon page at Page/Demo
 
 ## Sections
 - Navigation bar
