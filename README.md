@@ -8,13 +8,14 @@ I created this with vanilla JS, HTML and CSS for the Web Dev course at Temple Un
 Ever wonder what would happen if Stack Overflow is more like a social media where one could earn social point and upvote and scroll through some com sci meme? Yeah, me neither. But I need a new idea to break through from my normal design pattern so here it is.
 
 ## Getting Started
-These instructions will guild you through the inital setting up process and highlight what the apps can do for you to explore on your own.  
+These instructions will guild you through the inital setting up process and 
+highlight what the apps can do for you to explore on your own.  
 In case you would like to make this project your own, you will need your own MySQL database set up and got it hooked to the JDBC manager. The field of the database much match the field name seen in the src/model/***/stringData.java
 
 
 ## Notable feature
-- Single Page Application (main content that is) with JS injected content  
-- Self created APIs using JSP technologies
+- Single Page Application (main content that is) with dynamic JS injected content  
+- Self made APIs using JSP 
 - CRUD functionalities, log on/off, filter, etc...
 - SQL injection prevention with preparedStatement
 - AJAX
@@ -32,7 +33,7 @@ In case you would like to make this project your own, you will need your own MyS
 - Account
 - Home
 - Blog
-- Messeging (coming soon)
+- Messaging (coming soon)
 
 
 ## Prequesite
