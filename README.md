@@ -1,16 +1,18 @@
 
-## Buggit
+## BUGGIT
 site: [http://cis-linux2.temple.edu:8080/SP20_3308_tug70814/](http://cis-linux2.temple.edu:8080/SP20_3308_tug70814/index.html#/home)  
-A (almost) social media site that is sipposed to be the combination of Reddit and Stackoverflow. Or at least that's what it is intended to be.
-I created this with vanilla JS, HTML and CSS for Web Dev course at Temple University
+A (almost) social media site that is supposed to be the combination of Reddit and Stackoverflow. Or at least that's what it is intended to be.
+I created this with vanilla JS, HTML and CSS for the Web Dev course at Temple University.
+
+## Motivation
+Ever wonder what would happen if Stack Overflow is more like a social media where one could earn social point and upvote and scroll through some com sci meme? Yeah, me neither. But I need a new idea to break through from my normal design pattern so here it is.
+
+## Getting Started
+These instructions will guild you through the inital setting up process and highlight what the apps can do for you to explore on your own.  
+In case you would like to make this project your own, you will need your own MySQL database set up and got it hooked to the JDBC manager. The field of the database much match the field name seen in the src/model/***/stringData.java
 
 
-### Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.  
-In case you would like to make this project your own, you need your own MySQL database and got it hooked to the JDBC manager.
-
-
-### Notable feature
+## Notable feature
 - Single Page Application (main content that is) with JS injected content  
 - Self created APIs using JSP technologies
 - CRUD functionalities, log on/off, filter, etc...
@@ -23,7 +25,7 @@ In case you would like to make this project your own, you need your own MySQL da
 - Many reusable JS components. Many reusable component create the whole HTML interface with functionlaity similar to a React component
 - Detailed tutorial with codePen iframe
 
-### Sections
+## Sections
 - Navigation bar
 - Search 
 - Page
@@ -33,18 +35,18 @@ In case you would like to make this project your own, you need your own MySQL da
 - Messeging (coming soon)
 
 
-### Prequesite
+## Prequesite
 a server like [Glassfish](https://javaee.github.io/glassfish/) or [Tomcat](http://tomcat.apache.org/),   
 or [VsCode live server plugin](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)  
 [MySQL](https://www.mysql.com/products/workbench/) if you want to host your own data
 
 
-### Recommendation
+## Recommendation
 [Netbean Glassfish/Tomcat support bundle](https://netbeans.org/downloads/8.2/rc/)
 
 
-### Installing and Running
-Clone the repo
+## Installing and Running
+Clone the remote to your local repo
 ```
 git clone https://github.com/zahego/Buggit.git
 ```
@@ -52,7 +54,7 @@ run the file on server, or if run on Netbean with web support bundle, just click
 explore the functionalities  
 
 
-### What you can do
+## What you can do
 - try insert, delete and update some data  
 - try follow the tutorials on Page/Tutorial  
 - listen to some sick beat on Page/Demo  
@@ -61,8 +63,10 @@ explore the functionalities
 - read about my weekly strugle on Blog
 - enjoy
 
+## API reference
+Youtube Player API
 
-### Built With
+## Technologies stack
 Framework: [Vuejs](https://vuejs.org/)  
 web: HTML, CSS, JS,  
 server: JSP, Java, MySQL  
@@ -71,11 +75,14 @@ JAR: [gson-2.6.2.jar](https://repo1.maven.org/maven2/com/google/code/gson/gson/2
 ssh: Putty  
 sftp: WinSCP    
 server: Glassfish, Apache  
-API: Youtube Player API
 
 
-### Contributors
+## Contributors
 Minh Tran 
 
-### Challenges and perks
+
+## License
+This project is licensed under the MIT License
+
+## Challenges and resolutions
 check out the [blog](http://cis-linux2.temple.edu:8080/SP20_3308_tug70814/index.html#/blog) section on the page, where I recorded the experience I had while building the page
