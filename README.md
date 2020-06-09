@@ -1,6 +1,6 @@
 
 ## BUGGIT
-site: [http://cis-linux2.temple.edu:8080/SP20_3308_tug70814/](http://cis-linux2.temple.edu:8080/SP20_3308_tug70814/index.html#/home)  
+[http://cis-linux2.temple.edu:8080/SP20_3308_tug70814/](http://cis-linux2.temple.edu:8080/SP20_3308_tug70814/index.html#/home)  
 A (almost) social media site that is supposed to be the combination of Reddit and Stackoverflow. Or at least that's what it is intended to be.
 I created this with vanilla JS, HTML and CSS for the Web Dev course at Temple University.
 
