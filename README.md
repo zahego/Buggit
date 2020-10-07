@@ -4,6 +4,12 @@
 A (almost) social media site that is supposed to be the combination of Reddit and Stackoverflow. Or at least that's what it is intended to be.
 I created this with vanilla JS, HTML and CSS for the Web Dev course at Temple University.
 
+## Site Images
+![Homepage](https://github.com/zahego/Buggit/blob/master/web/img/screenshot/Untitled.png)
+![Coming Soon Page](https://github.com/zahego/Buggit/blob/master/web/img/screenshot/Untitled2.png)
+![LogIn page](https://github.com/zahego/Buggit/blob/master/web/img/screenshot/Untitled3.png)
+![Data page](https://github.com/zahego/Buggit/blob/master/web/img/screenshot/Untitled4.png)
+
 ## Motivation
 Ever wonder what would happen if Stack Overflow is more like a social media where one could earn social point and upvote and scroll through some com sci meme? Yeah, me neither. But I need a new idea to break through from my normal design pattern so here it is.
 
@@ -38,7 +44,7 @@ In case you would like to make this project your own, you will need your own MyS
 - Messaging (coming soon)
 
 
-## Prequesite
+## Prerequisite
 a server like [Glassfish](https://javaee.github.io/glassfish/) or [Tomcat](http://tomcat.apache.org/),   
 or [VsCode live server plugin](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)  
 [MySQL](https://www.mysql.com/products/workbench/) if you want to host your own data
