@@ -1,4 +1,4 @@
-package model.other;
+package model.profile;
 
 import dbUtils.FormatUtils;
 import java.sql.ResultSet;
@@ -43,7 +43,7 @@ public class StringData {
             this.pointEarn = FormatUtils.formatInteger(results.getObject("point_earn"));
             this.departmentId = FormatUtils.formatInteger(results.getObject("department_id"));
         } catch (Exception e) {
-            this.errorMsg = "Exception thrown in model.other.StringData (the constructor that takes a ResultSet): " + e.getMessage();
+            this.errorMsg = "Exception thrown in model.profile.StringData (the constructor that takes a ResultSet): " + e.getMessage();
         }
     }
 

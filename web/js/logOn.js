@@ -16,7 +16,7 @@ logOn.UI=function (id) {
     <div class="stopFloat"></div>
     </form>
     <br/> <br/>
-    <div id="msgArea" class="clickSort"></div>
+    <div id="msgArea" class="clickSort" ></div>
     </div>
 
     `;

@@ -14,13 +14,13 @@ public class ValidationUtils {
             return "";  // Since this field is not required, empty string is valid user entry.
         }
         try {
-            java.text.SimpleDateFormat dateformat = new java.text.SimpleDateFormat("MM/dd/yyyy"); //please notice the capital M
+            java.text.SimpleDateFormat dateformat = new java.text.SimpleDateFormat("MM-dd-yyyy"); //please notice the capital M
             dateformat.setLenient(false);
             java.util.Date myDate = dateformat.parse(val);
             java.sql.Date convertedDate = new java.sql.Date(myDate.getTime()); // // not using (on purpose).
             return ""; // means date is good
         } catch (Exception e) {
-            return "Please enter a valid date (format: MM/DD/YYYY)";  // can also add (to debug) + e.getMessage();
+            return "Please enter a valid date (format: MM-dd-yyyy)";  // can also add (to debug) + e.getMessage();
         }
     } // dateValidationMsg
 
@@ -31,7 +31,7 @@ public class ValidationUtils {
             return null;
         }
         try {
-            java.text.SimpleDateFormat dateformat = new java.text.SimpleDateFormat("MM/dd/yyyy"); //please notice the capital M
+            java.text.SimpleDateFormat dateformat = new java.text.SimpleDateFormat("MM-dd-yyyy"); //please notice the capital M
             dateformat.setLenient(false);
             java.util.Date myDate = dateformat.parse(val);
             return new java.sql.Date(myDate.getTime());

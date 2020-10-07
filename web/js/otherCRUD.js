@@ -6,6 +6,7 @@ otherCRUD.UI=function (id) {
         `
     <div class="logOn">
     <h1>Enter new Profile Data</h1>
+    <form style="color: #27A4D2">
     <table >
     
         <tr id='profileIdRow'>
@@ -65,6 +66,7 @@ otherCRUD.UI=function (id) {
             <td></td>
         </tr>
     </table>
+    </form>
     </div>
 
     `;
@@ -76,6 +78,7 @@ otherCRUD.updateOTherUI=function (id, findId) {
         `
     <div class="logOn">
     <h1>Enter new Profile Data</h1>
+    <form style="color: #27A4D2">
     <table >
     
         <tr id='profileIdRow'>
@@ -130,6 +133,7 @@ otherCRUD.updateOTherUI=function (id, findId) {
             <td></td>
         </tr>
     </table>
+    </form>
     </div>
 
     `;
@@ -274,7 +278,11 @@ otherCRUD.updateOTherUI=function (id, findId) {
          document.getElementById(id).innerHTML = "";
         var dataListOther = document.createElement("div");
         dataListOther.id = "dataListOther"; // set the id so it matches CSS styling rule.
-        dataListOther.innerHTML = "<h1 class='logOn' style='left: 45%; color: #003368'>Profile  <a href='#/otherInsert'><img style='position:relative; border: thick solid rgb(39,164,210)' src='icons/insert.png' /></a></h1>";
+        dataListOther.innerHTML = "<h1 class='logOn' style='left: 45%; color: #003368'>Profile  <a href='#/otherInsert'>"+
+                "<div style='background-color:rgb(0,51,104); border-radius:90%; position: relative; width:35px; height: 35px; float:left; left: 60%;'>"+
+                "<div style='background-color:rgb(238,238,238); height: 5px; width:25px; left: 15%; top: 45%; position: relative;'>"+
+                "<div class='stopFloat' style='background-color:white; height: 5px; width:25px; position: relative; transform: rotate(90deg);' >"+
+                "</div></div></div></a></h1>";
         dataListOther.innerHTML += "<h3 style='position: relative; top: 80px' id='listMsgOther' class='clickSort'></h3>";
         document.getElementById("content").appendChild(dataListOther);
 

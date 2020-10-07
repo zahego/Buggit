@@ -1,9 +1,10 @@
 package view;
 
 // classes imported from java.sql.*
+import model.profile.StringData;
+import model.profile.StringDataList;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import model.other.*;
 
 // classes in my project
 import dbUtils.*;

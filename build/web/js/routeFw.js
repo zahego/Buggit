@@ -57,7 +57,7 @@ function routeFwBody(params) {
     var fw = {}; // creating and adorning this object to be passed back to the HTML page.
 
     var startingPath = params.startingPath || '/home';
-    var contentId = params.contentId || "view";
+    var contentId = params.contentId || "content";
 
     if (!params.routeArray || params.routeArray[0]) {
         alert("parameter object must specify array 'routeArray' with at least one element");

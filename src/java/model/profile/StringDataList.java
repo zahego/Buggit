@@ -1,4 +1,4 @@
-package model.other;
+package model.profile;
 
 import java.util.ArrayList;
 import java.sql.ResultSet;

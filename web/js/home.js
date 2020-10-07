@@ -94,7 +94,23 @@ var contentHome =
                 document.onmousemove = null;
         }
         }
-        
+        document.getElementById("line").onmousedown = showHide;
+        function showHide() {
+         var x = document.getElementById("draggableDivVue");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                    } else {
+                    x.style.display = "none";
+                }
+         var x = document.getElementById("line");
+                if (x.style.transform === "rotate(90deg)") {
+                    x.style.transform = "rotate(0)";
+                    } else {
+                    x.style.transform = "rotate(90deg)";
+                }
+        document.getElementById("draggableChatBox").style.left="80%";
+        document.getElementById("draggableChatBox").style.top="56%";
+            }              
         
         
         var DragVue=new Vue({

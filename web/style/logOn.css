@@ -1,6 +1,4 @@
 .logOn{
-    left: 37%;
-    position: absolute;
     text-align: center;
     
 }
@@ -9,7 +7,7 @@
     color: rgb(0,51,104) !important;
 }
 .logOn form{
-    left: 12%;
+    left: 38%;
     position: relative;
 }
 .logOn input, select{
@@ -26,7 +24,7 @@
     width: 150px;
     height: 30px;
     display: block;
-    left: 20%;
+    left: 5%;
     position: relative;
 }
 select{

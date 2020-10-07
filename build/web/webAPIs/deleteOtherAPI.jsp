@@ -1,7 +1,7 @@
 <%@page contentType="application/json; charset=UTF-8" pageEncoding="UTF-8"%> 
 
 <%@page language="java" import="dbUtils.*" %>
-<%@page language="java" import="model.other.*" %> 
+<%@page language="java" import="model.profile.*" %> 
 <%@page language="java" import="com.google.gson.*" %>
 
 <%

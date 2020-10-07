@@ -19,7 +19,7 @@ public class FormatUtils {
         }
         try {
             java.util.Date dateval = (java.util.Date) obj;
-            SimpleDateFormat dateformat = new SimpleDateFormat("MM/dd/yyyy");
+            SimpleDateFormat dateformat = new SimpleDateFormat("MM-dd-yyyy");
             dateformat.setLenient(false);
             return dateformat.format(dateval);
         } catch (Exception e) {

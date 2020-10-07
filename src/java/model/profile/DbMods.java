@@ -1,4 +1,4 @@
-package model.other;
+package model.profile;
 
 import dbUtils.*;
 import java.sql.PreparedStatement;
@@ -129,7 +129,7 @@ public static StringData update2(StringData inputData, DbConn dbc) {
     public static String delete(String otherId, DbConn dbc) {
 
         if (otherId == null) {
-            return "Error in model.other.DbMods.delete: cannot delete web_user record because 'otherId' is null";
+            return "Error in model.profile.DbMods.delete: cannot delete web_user record because 'otherId' is null";
         }
 
         // This method assumes that the calling Web API (JSP page) has already confirmed 
@@ -155,7 +155,7 @@ public static StringData update2(StringData inputData, DbConn dbc) {
             }
 
         } catch (Exception e) {
-            result = "Exception thrown in model.other.DbMods.delete(): " + e.getMessage();
+            result = "Exception thrown in model.profile.DbMods.delete(): " + e.getMessage();
         }
 
         return result;
